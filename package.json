@@ -1,0 +1,19 @@
+{
+  "name": "fluent-ffmpeg-multistream",
+  "version": "1.0.0",
+  "description": "Adds support for multiple stream inputs/outputs to fluent-ffmpeg.",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "standard --fix src/** && tape test/*.js"
+  },
+  "author": "Thomas Mullen",
+  "license": "MIT",
+  "devDependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "standard": "^8.6.0",
+    "tape": "^4.6.3"
+  }
+}
