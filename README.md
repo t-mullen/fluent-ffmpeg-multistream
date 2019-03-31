@@ -2,7 +2,7 @@
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Uses Unix domain sockets to add support for multiple stream inputs/outputs to (fluent-ffmpeg)[https://github.com/fluent-ffmpeg/node-fluent-ffmpeg].
+Uses Unix domain sockets to add support for multiple stream inputs/outputs to [fluent-ffmpeg](https://github.com/fluent-ffmpeg/node-fluent-ffmpeg).
 
 ```javascript
 const ffmpeg = require('fluent-ffmpeg')
