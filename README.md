@@ -9,9 +9,9 @@ const ffmpeg = require('fluent-ffmpeg')
 const { StreamInput, StreamOutput } = require('fluent-ffmpeg-multistream')
 
 ffmpeg()
-	.input(StreamInput(readableStream1).url)
-	.input(StreamInput(readableStream2).url)
-	.output(StreamOutput(writableStream1).url)
-	.output(StreamOutput(writableStream2).url)
+  .input(StreamInput(readableStream1).url)
+  .input(StreamInput(readableStream2).url)
+  .output(StreamOutput(writableStream1).url)
+  .output(StreamOutput(writableStream2).url)
 ```
 
