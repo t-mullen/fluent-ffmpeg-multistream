@@ -1,21 +1,22 @@
 const net = require('net')
 const fs = require('fs')
+const path = require('path');
 
 var counter = 0
 class UnixStream {
   constructor (stream, onSocket) {
-    const path = './' + (++counter) + '.sock'
-    this.url = 'unix:' + path
+    const socketPath = path.resolve('/tmp/', (++counter), '.sock');
+    this.url = 'unix:' + socketPath
 
     try {
-      fs.statSync(path)
-      fs.unlinkSync(path)
+      fs.statSync(socketPath)
+      fs.unlinkSync(socketPath)
     } catch (err) {}
     const server = net.createServer(onSocket)
     stream.on('finish', () => {
       server.close()
     })
-    server.listen(path)
+    server.listen(socketPath)
   }
 }
 
