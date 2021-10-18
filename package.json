@@ -6,6 +6,10 @@
   "directories": {
     "test": "test"
   },
+  "repository": {	
+    "type": "git",
+    "url": "https://github.com/t-mullen/fluent-ffmpeg-multistream.git"
+  },
   "scripts": {
     "test": "standard --fix src/** && tape test/*.js"
   },
