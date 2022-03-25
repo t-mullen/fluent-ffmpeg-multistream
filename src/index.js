@@ -5,8 +5,18 @@ const path = require('path');
 var counter = 0
 class UnixStream {
   constructor (stream, onSocket) {
-    const socketPath = path.resolve('/tmp/', (++counter), '.sock');
-    this.url = 'unix:' + socketPath
+    var sockpath = '';
+    if (process.platform === 'win32') {
+      const pipePrefix = '\\\\.\\pipe\\';
+      const pipeName = `node-webrtc.${++counter}.sock`;
+
+      sockpath = path.join(pipePrefix, pipeName);
+      this.url = sockpath;
+    }
+    else {
+      sockpath = './' + (++counter) + '.sock'
+      this.url = 'unix:' + sockpath
+    }
 
     try {
       fs.statSync(socketPath)
